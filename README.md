@@ -31,5 +31,5 @@ The hardware architecture is designed to be cost-effective and reliable, with a 
 *   `/media/` - Photos and video demonstrations of the system in action.
 
 
-## 👤 Author
+## Author
 Katya — @kkafkk
