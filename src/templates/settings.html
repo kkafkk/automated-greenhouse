@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ Настройки</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #d7ccc8 100%); padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header { background: #5D4037; color: white; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 25px; }
+        .card { background: #f8f9fa; padding: 20px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid #5D4037; }
+        .btn { padding: 12px 20px; border: none; border-radius: 50px; cursor: pointer; color: white; font-weight: bold; transition: 0.3s; }
+        .btn:hover { opacity: 0.8; transform: scale(1.02); }
+        .btn-save { background: #5D4037; width: 100%; border-radius: 10px; margin-top: 15px; }
+        .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .btn-mode { background: #4caf50; border-radius: 10px; font-size: 0.85rem; padding: 12px 5px; }
+        .param-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        input { width: 70px; padding: 8px; text-align: center; border-radius: 8px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <!-- Основной контейнер -->
+    <div class="container">
+        <!-- Заголовок -->
+        <div class="header"><h1>⚙️ Настройки системы</h1></div>
+        <!-- Карточка выбора режима -->
+        <div class="card">
+            <h2>🌿 Текущий режим: {{ settings.current_stage }}</h2>
+            <p style="font-size: 0.85rem; color: #666;">Выберите готовую программу:</p>
+            <!-- Форма выбора режима -->
+            <form action="/set_mode" method="post" class="mode-grid">
+                {% for key, mode in modes.items() %}
+                <!-- Кнопка выбора режима -->
+                    <button type="submit" name="mode_key" value="{{ key }}" class="btn btn-mode">
+                        {{ mode.name }}
+                    </button>
+                {% endfor %}
+            </form>
+        </div>
+        <!-- Ссылка на главную страницу -->
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="/" style="text-decoration: none; color: #5D4037; font-weight: bold;">← На главную</a>
+        </div>
+    </div>
+</body>
+</html>

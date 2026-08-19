@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в систему</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f2f5; }
+        .login-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 10px; margin: 10px 0; width: 200px; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #5D4037; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <!-- Карточка входа -->
+    <div class="login-card">
+         <!-- Заголовок -->
+        <h2>🔒 Доступ ограничен</h2>
+         <!-- Форма входа -->
+        <form action="/login" method="post">
+            <input type="password" name="password" placeholder="Введите пароль" required>
+            <br>
+            <button type="submit">Войти</button>
+        </form>
+         <!-- Ссылка "Назад" -->
+        <a href="/" style="display:block; margin-top:15px; font-size: 0.8rem; color: #666;">Назад на главную</a>
+    </div>
+</body>
+</html>
